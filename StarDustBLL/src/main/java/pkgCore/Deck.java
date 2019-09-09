@@ -43,8 +43,12 @@ public class Deck {
 	 *                    cardsInDeck contains two 52-card decks. Make sure the deck
 	 *                    is shuffled.
 	 */
+	//FIXME - Implement this method.  Shouldn't return null, return the right value
+
 	public Deck(int iNbrOfDecks) {
-		//TODO - Implement the constructor
+		this.eSuit = eSuit;
+		this.eRank = eRank;
+		this.Wild = false;
 	}
 
 	/**
@@ -56,7 +60,7 @@ public class Deck {
 	 */
 	public Card Draw() throws DeckException {
 		//FIXME - Implement this method.  Shouldn't return null, return the right value
-		return null;
+		return getCardsInDeck(0);
 
 	}
 
