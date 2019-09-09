@@ -43,14 +43,17 @@ public class Deck {
 	 *                    cardsInDeck contains two 52-card decks. Make sure the deck
 	 *                    is shuffled.
 	 */
-	//FIXME - Implement this method.  Shouldn't return null, return the right value
-
 	public Deck(int iNbrOfDecks) {
-		this.eSuit = eSuit;
-		this.eRank = eRank;
-		this.Wild = false;
+		for(int n = 0; n < iNbrOfDecks; n++) {
+			for(eSuit Suit: EnumSet.range: eSuit.HARTS,eSuit.SPADES) {
+				for(eRank Rank: Enumset.Range: eRanK.TWO, eRanK.ACE) {
+					Card c = new Card (Suit,Rank);
+					cardsInDeck.add(c);
+				}
+			}
+			Collections.shuffle(cardsInDeck);
+		}
 	}
-
 	/**
 	 * @author BRG
 	 * @version Lab #1
@@ -59,8 +62,10 @@ public class Deck {
 	 * @throws DeckException
 	 */
 	public Card Draw() throws DeckException {
-		//FIXME - Implement this method.  Shouldn't return null, return the right value
-		return getCardsInDeck(0);
+		if(this.cardsInDeck.size()==0) {
+			throw new DeckExcetion(this);
+			}
+			return cardsInDeck.remove(0);
 
 	}
 
@@ -73,8 +78,7 @@ public class Deck {
 	 * getiDeckCount - Return the number of cards remaining in the deck.
 	 */
 	public int getiDeckCount() {
-		//FIXME - Implement this method.  Shouldn't return 0, return the right value
-		return 0;
+		return this.cardsIndeck.size();
 	}
 
  
@@ -88,8 +92,7 @@ public class Deck {
 	 * @return - the cards in the deck.
 	 */
 	private ArrayList<Card> getCardsInDeck() {
-		//FIXME - Implement this method.  Shouldn't return 0, return the right value
-		return null;
+		return this.cardsInDeck();
 	}
  
 	
